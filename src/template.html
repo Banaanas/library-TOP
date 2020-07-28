@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Library</title>
+  </head>
+  <body>
+    <header>
+      <h1>My Library</h1>
+      <div id="open-modal-button-container">
+        <button id="open-modal-button">Add a Book</button>
+      </div>
+    </header>
+
+    <div id="book-addcard-modal">
+      <div id="book-addcard-modal-content">
+        <div id="modal-error-message"></div>
+        <span id="close-modal">&times;</span>
+
+        <div id="modal-content-container">
+          <label for="book-title-input">Title :</label>
+          <input type="text" id="book-title-input" size="12" />
+
+          <label for="book-author-input">Author :</label>
+          <input type="text" id="book-author-input" size="10" />
+
+          <label for="book-date-input">Year of Publication :</label>
+          <input
+            type="number"
+            id="book-date-input"
+            min="1"
+            max="2020"
+            size="10"
+          />
+
+          <label for="book-number-pages-input">Number of Pages :</label>
+          <input type="number" id="book-number-pages-input" min="0" size="10" />
+
+          <label for="book-cover-link-input">Book Cover Link :</label>
+          <input type="text" id="book-cover-link-input" size="10" />
+
+          <label id="book-read-status">Read : </label>
+
+          <div id="read-status-yes-no">
+            <label for="read-status-yes"> Yes </label>
+            <input
+              type="radio"
+              id="read-status-yes"
+              name="read-status"
+              value="Yes"
+            />
+
+            <label for="read-status-no"> No </label>
+            <input
+              type="radio"
+              id="read-status-no"
+              name="read-status"
+              value="No"
+              checked
+            />
+          </div>
+        </div>
+
+        <div id="add-button-container">
+          <button id="add-book-button" value="Add Book">Add a Book</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="bookshelf">
+     <!-- <div class="book-container" data-id="${index}">
+        <div class="book-image-container">
+          <img class="book-image" src="./images/book.svg" alt="Book Cover" />
+        </div>
+
+        <div class="book-card">
+          <div class="book-pages-date-container">
+            <div class="book-date-card">1848</div>
+            <div class="book-pages-number-card">250 pages</div>
+          </div>
+
+          <div class="book-title-card">Les Illusions Perdues</div>
+
+          <div class="book-author-container">
+            <img
+              class="feather-author-card"
+              src="./images/feather.svg"
+              alt="feather-image"
+            />
+            <div class="book-author-card">Balzac</div>
+          </div>
+
+          <div class="book-delete-read-status-card">
+            <button class="delete-button">
+              <img
+                class="delete-image"
+                src="./images/delete.svg"
+                alt="remove-book"
+              />
+            </button>
+
+            <div class="read-status">
+              <span class="read-status-text">Read</span>
+
+              <label class="switch">
+                <input class="read-status-checkbox" type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </body>
+</html>

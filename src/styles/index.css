@@ -1,0 +1,435 @@
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: 62.5%;
+    --primary-color: #ffee58;
+    --primary-light-color: #ffff8b;
+    --primary-dark-color: #c9bc1f;
+    --primary-text-color: #1b1b1b;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+    min-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-light-color);
+}
+
+/** HEADER **/
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-text-color);
+}
+
+h1 {
+    align-self: center;
+    width: 70%;
+    padding-bottom: 1rem;
+    color: var(--primary-text-color);
+    font-weight: bolder;
+    font-size: 6rem;
+    letter-spacing: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#open-modal-button-container {
+    width: 30%;
+}
+
+#open-modal-button {
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 3rem;
+    background-color: var(--primary-dark-color);
+    border-radius: 5px;
+}
+
+/** ADD BOOK MODAL **/
+
+/* The Modal (background) */
+#book-addcard-modal {
+    position: fixed; /* Stay in place */
+    left: 0;
+    z-index: 1; /* Sit on top */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+#book-addcard-modal-content {
+    position: relative;
+    width: 80%;
+    min-width: 340px;
+    margin: 25% auto; /* 15% from the top and centered */
+    padding: 20px;
+    overflow: hidden;
+    color: var(--primary-text-color);
+    font-weight: 700;
+    font-size: 2rem;
+    background-color: var(--primary-light-color);
+    border: 3px solid var(--primary-text-color);
+    border-radius: 20px;
+}
+
+/* The Close Button */
+#close-modal {
+    float: right;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    color: var(--primary-text-color);
+    font-weight: bold;
+    font-size: 2.8rem;
+}
+
+#close-modal:hover,
+#close-modal:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-content-container {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    font-size: 3vw;
+}
+
+/** MODAL ERROR MESSAGE **/
+#modal-error-message {
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: .5rem;
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--primary-dark-color);
+    border-radius: 3px;
+}
+
+#book-read-status,
+#read-status-yes-no {
+    margin-top: 1rem;
+}
+
+#book-title-input,
+#book-author-input,
+#book-date-input,
+#book-number-pages-input {
+    text-align: center;
+}
+
+#read-status-yes-no {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+#add-button-container {
+    width: 100%;
+    text-align: center;
+}
+
+#add-book-button {
+    width: 30%;
+    margin-top: 2rem;
+    color: var(--primary-text-color);
+    font-weight: bolder;
+    font-size: 3vw;
+;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--primary-dark-color);
+    border: var(--primary-color);
+    border-radius: 10px;
+}
+
+
+
+/** BOOKSHELF **/
+#bookshelf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 4rem;
+    font-size: 2.5rem;
+    font-family: "Roboto Slab", serif;
+}
+
+.book-container {
+    display: flex;
+    margin: .5rem;
+}
+
+.book-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    height: 23rem;
+    padding: 1rem;
+    font-size: 2.5rem;
+    background-color: var(--primary-dark-color);
+    border: 1px solid black;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    height: 23rem;
+    padding: 1rem;
+    overflow: hidden;
+    font-size: 2.5rem;
+    background-color: #fcfcfa;
+    border: 1px solid black;
+    border-radius: 0 1rem 1rem 0;
+}
+
+.book-image {
+    width: 100%;
+    height: 100%;
+}
+
+.book-pages-date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.book-pages-date-container {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px black solid;
+}
+
+.book-title-card {
+    height: 15rem;
+    padding-top: 2.5rem;
+    overflow: auto;
+    color: var(--primary-text-color);
+    font-weight: bold;
+    font-size: 1.8rem;
+    text-align: end;
+    text-transform: uppercase;
+}
+
+.book-author-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    border-bottom: 1px black solid;
+}
+
+.feather-author-card {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.2rem;
+}
+
+.book-author-card {
+    font-style: italic;
+    text-align: center;
+}
+
+.book-delete-read-status-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.read-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.delete-button {
+    width: 4rem;
+    height: 2rem;
+}
+
+.delete-image {
+    width: 2rem;
+    height: 1.5rem;
+}
+
+.read-status-text {
+    display: flex;
+    flex-direction: row;
+    padding-right: 5px;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/* The slider - Read / Not Read*/
+.slider {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #ccc;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    bottom: 0rem;
+    left: -0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    transition: 0.4s;
+    content: "";
+}
+
+input:checked + .slider {
+    background-color: #2196f3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Center placeholders */
+
+input::placeholder {
+    text-align: center;
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 819px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    #open-modal-button {
+        font-size: 2rem;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    #book-addcard-modal-content {
+        width: 100%;
+    }
+
+    #modal-content-container {
+        font-size: 1.5rem;
+    }
+
+    #open-modal-button {
+        font-size: 1.5rem;
+    }
+
+    .book-card, .book-image-container {
+        width: 14rem;
+        height: 17rem;
+    }
+
+    .book-title-card {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .book-author-container {
+        display: none;
+    }
+
+    .read-status-text {
+        font-size: 1rem;
+        text-align: end;
+        text-transform: uppercase;
+    }
+}
+
+
+
+@media only screen and (min-width: 795px) {
+    #book-addcard-modal-content {
+        max-width: 700px;
+    }
+
+    #modal-content-container {
+        font-size: 2rem!important;
+    }
+
+    #add-book-button {
+        font-size: 2.5rem;
+
+    }
+}
