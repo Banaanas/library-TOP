@@ -59,7 +59,7 @@ Library Application achieved as part of <a href="https://www.theodinproject.com/
 
 <p align="center">
   <a href="https://banaanas.github.io/library-TOP/">
-    <img src="src/images/README/screenshot-1.png" alt="Screenshot" width="455" height="400">
+    <img src="src/images/README/animated-gif-1.gif" alt="Animated Gif" width="455" height="400">
   </a>
 </p>
 
@@ -74,12 +74,8 @@ Library Application achieved as part of <a href="https://www.theodinproject.com/
 
 <p align="center">
   <a href="https://banaanas.github.io/library-TOP/">
-    <img src="src/images/README/screenshot-2.png" alt="Screenshot" width="240" height="450">
+    <img src="src/images/README/animated-gif-2.gif" alt="Animated Gif" width="240" height="400">
   </a> 
-  
-  <a href="https://banaanas.github.io/library-TOP/">
-    <img src="src/images/README/screenshot-3.png" alt="Screenshot" width="240" height="450">
-  </a>
 </p>
 
 #### Built With
