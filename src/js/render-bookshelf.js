@@ -1,4 +1,5 @@
 // Displays all books from the library array to HTML
+import genericBookCover from "../images/book.svg";
 import featherImg from "../images/feather.svg";
 import deleteImg from "../images/delete.svg";
 import elementsDOM from "./elements-DOM";
@@ -17,8 +18,8 @@ const renderBookshelf = (libraryArray) => {
     let bookCoverImage;
 
     // If no bookcover has been entered
-    if (libraryArray[index].bookCover === undefined) {
-      bookCoverImage = "./images/book.svg";
+    if (libraryArray[index].bookCover === "") {
+      bookCoverImage = genericBookCover;
     } else if (libraryArray[index].bookCover !== false) {
       bookCoverImage = libraryArray[index].bookCover;
     }

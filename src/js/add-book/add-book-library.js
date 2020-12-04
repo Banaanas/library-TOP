@@ -1,4 +1,4 @@
-// Creates new book and pushed it into myLibrary array
+// Create new book and push it into myLibrary array
 import BookFactory from "../book/book-factory";
 import elementsDOM from "../elements-DOM";
 import { myLibrary, renderBookshelf } from "../render-bookshelf";

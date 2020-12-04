@@ -4,7 +4,7 @@ const elementsDOM = {
   allValues: document.querySelectorAll(
     "#book-title-input, #book-author-input, #book-date-input, #book-number-pages-input, #book-cover-link-input",
   ),
-  bookAddCardModal: document.querySelector("#book-addcard-modal"),
+  bookAddCardModal: document.querySelector("#book-add-card-modal"),
   bookShelf: document.querySelector("#bookshelf"),
   closeModal: document.querySelector("#close-modal"),
   modalErrorMessage: document.querySelector("#modal-error-message"),

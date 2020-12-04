@@ -1,435 +1,458 @@
 *,
-*:before,
-*:after {
-    box-sizing: inherit;
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html {
-    box-sizing: border-box;
-    height: 100%;
-    font-size: 62.5%;
-    --primary-color: #ffee58;
-    --primary-light-color: #ffff8b;
-    --primary-dark-color: #c9bc1f;
-    --primary-text-color: #1b1b1b;
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 16px;
+
+  --primary-color: #ffee58;
+  --primary-light-color: #ffff8b;
+  --primary-dark-color: #c9bc1f;
+  --primary-text-color: #1b1b1b;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-width: 280px;
-    min-height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: var(--primary-light-color);
+  position: relative; /* GitHub Banner */
+  display: flex;
+  flex-direction: column;
+  min-width: 340px;
+  min-height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: var(--primary-light-color);
 }
 
 /** HEADER **/
 header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    border-bottom: 3px solid var(--primary-text-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-text-color);
 }
 
 h1 {
-    align-self: center;
-    width: 70%;
-    padding-bottom: 1rem;
-    color: var(--primary-text-color);
-    font-weight: bolder;
-    font-size: 6rem;
-    letter-spacing: 1rem;
-    text-align: center;
-    text-transform: uppercase;
+  align-self: center;
+  width: 70%;
+  padding-bottom: 0.5rem;
+  color: var(--primary-text-color);
+  font-weight: bolder;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 #open-modal-button-container {
-    width: 30%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 1rem 0;
 }
 
 #open-modal-button {
-    color: var(--primary-text-color);
-    font-weight: 700;
-    font-size: 3rem;
-    background-color: var(--primary-dark-color);
-    border-radius: 5px;
+  padding: 0.5rem;
+  color: var(--primary-dark-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: var(--primary-text-color);
+  border-radius: 5px;
 }
 
 /** ADD BOOK MODAL **/
 
 /* The Modal (background) */
-#book-addcard-modal {
-    position: fixed; /* Stay in place */
-    left: 0;
-    z-index: 1; /* Sit on top */
-    display: none; /* Hidden by default */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+#book-add-card-modal {
+  position: fixed; /* Stay in place */
+  left: 0;
+  z-index: 1; /* Sit on top */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-#book-addcard-modal-content {
-    position: relative;
-    width: 80%;
-    min-width: 340px;
-    margin: 25% auto; /* 15% from the top and centered */
-    padding: 20px;
-    overflow: hidden;
-    color: var(--primary-text-color);
-    font-weight: 700;
-    font-size: 2rem;
-    background-color: var(--primary-light-color);
-    border: 3px solid var(--primary-text-color);
-    border-radius: 20px;
+#book-add-card-modal-content {
+  position: relative;
+  min-width: 340px;
+  max-width: 450px;
+  margin: 25% auto; /* 15% from the top and centered */
+  padding: 20px;
+  overflow: hidden;
+  color: var(--primary-text-color);
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: var(--primary-light-color);
+  border: 3px solid var(--primary-text-color);
+  border-radius: 20px;
 }
 
 /* The Close Button */
 #close-modal {
-    float: right;
-    margin-top: -15px;
-    margin-bottom: 20px;
-    color: var(--primary-text-color);
-    font-weight: bold;
-    font-size: 2.8rem;
+  float: right;
+  margin-top: -15px;
+  margin-bottom: 20px;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  font-size: 1.4rem;
 }
 
 #close-modal:hover,
 #close-modal:focus {
-    color: var(--primary-color);
-    text-decoration: none;
-    cursor: pointer;
+  color: var(--primary-color);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #modal-content-container {
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    font-size: 3vw;
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 }
 
 /** MODAL ERROR MESSAGE **/
 #modal-error-message {
-    position: absolute;
-    right: 0;
-    left: 0;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: .5rem;
-    font-size: 2rem;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: var(--primary-dark-color);
-    border-radius: 3px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0.25rem;
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--primary-dark-color);
+  border-radius: 3px;
 }
 
 #book-read-status,
 #read-status-yes-no {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 #book-title-input,
 #book-author-input,
 #book-date-input,
 #book-number-pages-input {
-    text-align: center;
+  text-align: center;
 }
 
 #read-status-yes-no {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-around;
 }
 
 #add-button-container {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 #add-book-button {
-    width: 30%;
-    margin-top: 2rem;
-    color: var(--primary-text-color);
-    font-weight: bolder;
-    font-size: 3vw;
-;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: var(--primary-dark-color);
-    border: var(--primary-color);
-    border-radius: 10px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  color: var(--primary-text-color);
+  font-weight: bolder;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--primary-dark-color);
+  border: var(--primary-color);
+  border-radius: 10px;
 }
-
-
 
 /** BOOKSHELF **/
 #bookshelf {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 4rem;
-    font-size: 2.5rem;
-    font-family: "Roboto Slab", serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  font-size: 1.3rem;
+  font-family: "Roboto Slab", serif;
 }
 
 .book-container {
-    display: flex;
-    margin: .5rem;
+  display: flex;
+  margin: 0.25rem;
 }
 
 .book-image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 18rem;
-    height: 23rem;
-    padding: 1rem;
-    font-size: 2.5rem;
-    background-color: var(--primary-dark-color);
-    border: 1px solid black;
-    border-radius: 1rem 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+  height: 12rem;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  background-color: var(--primary-dark-color);
+  border: 1px solid black;
+  border-radius: 0.5rem 0 0 0.5rem;
 }
 
 .book-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 18rem;
-    height: 23rem;
-    padding: 1rem;
-    overflow: hidden;
-    font-size: 2.5rem;
-    background-color: #fcfcfa;
-    border: 1px solid black;
-    border-radius: 0 1rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 10rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  font-size: 1.3rem;
+  background-color: #fcfcfa;
+  border: 1px solid black;
+  border-radius: 0 0.5rem 0.5rem 0;
 }
 
 .book-image {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .book-pages-date-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 1rem;
-}
-
-.book-pages-date-container {
-    padding-bottom: 0.5rem;
-    border-bottom: 1px black solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 0.3rem;
+  font-size: 0.5rem;
+  border-bottom: 1px black solid;
 }
 
 .book-title-card {
-    height: 15rem;
-    padding-top: 2.5rem;
-    overflow: auto;
-    color: var(--primary-text-color);
-    font-weight: bold;
-    font-size: 1.8rem;
-    text-align: end;
-    text-transform: uppercase;
+  overflow: auto;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .book-author-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-    padding-bottom: 2rem;
-    color: rgb(0, 0, 0);
-    font-size: 2rem;
-    border-bottom: 1px black solid;
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding-bottom: 1rem;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+  border-bottom: 1px black solid;
 }
 
 .feather-author-card {
-    width: 2rem;
-    height: 2rem;
-    margin-top: 0.2rem;
+  width: 1rem;
+  height: 1rem;
+  margin-top: 0.1rem;
 }
 
 .book-author-card {
-    font-style: italic;
-    text-align: center;
+  font-style: italic;
+  text-align: center;
 }
 
 .book-delete-read-status-card {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    height: 2rem;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 1rem;
+  margin-top: 0.5rem;
 }
 
 .read-status {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .delete-button {
-    width: 4rem;
-    height: 2rem;
+  width: 2rem;
+  height: 1rem;
 }
 
 .delete-image {
-    width: 2rem;
-    height: 1.5rem;
+  width: 1rem;
+  height: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 .read-status-text {
-    display: flex;
-    flex-direction: row;
-    padding-right: 5px;
-    font-size: 1.5rem;
-    text-align: justify;
+  display: flex;
+  flex-direction: row;
+  padding-right: 5px;
+  font-size: 0.9rem;
+  text-align: justify;
+  text-transform: uppercase;
 }
 
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 3rem;
-    height: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 1.5rem;
+  height: 0.8rem;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    width: 0;
-    height: 0;
-    opacity: 0;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
-/* The slider - Read / Not Read*/
+/* The slider - Read / Not Read */
 .slider {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #ccc;
-    cursor: pointer;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.slider:before {
-    position: absolute;
-    bottom: 0rem;
-    left: -0.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: white;
-    transition: 0.4s;
-    content: "";
+.slider::before {
+  position: absolute;
+  bottom: 0;
+  left: -0.3rem;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: white;
+  transition: 0.4s;
+  content: "";
 }
 
 input:checked + .slider {
-    background-color: #2196f3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
-    transform: translateX(20px);
+input:checked + .slider::before {
+  transform: translateX(20px);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
-.slider.round:before {
-    border-radius: 50%;
+.slider.round::before {
+  border-radius: 50%;
 }
 
 /* Center placeholders */
 
 input::placeholder {
-    text-align: center;
+  text-align: center;
 }
-
 
 /* MEDIA QUERIES */
 
-@media only screen and (max-width: 819px) {
-    h1 {
-        font-size: 3rem;
-    }
+@media only screen and (min-width: 500px) {
+  h1 {
+    font-size: 2rem !important;
+  }
 
-    #open-modal-button {
-        font-size: 2rem;
-    }
+  #modal-content-container {
+    font-size: 0.9rem;
+  }
+
+  .book-card,
+  .book-image-container {
+    width: 11rem;
+    height: 14rem;
+  }
+
+  .book-title-card {
+    text-align: end;
+  }
+
+  .book-author-container {
+    display: flex;
+  }
+
+  .read-status-text {
+    font-size: 0.5rem;
+    text-align: end;
+    text-transform: uppercase;
+  }
 }
-
-
-@media only screen and (max-width: 500px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    #book-addcard-modal-content {
-        width: 100%;
-    }
-
-    #modal-content-container {
-        font-size: 1.5rem;
-    }
-
-    #open-modal-button {
-        font-size: 1.5rem;
-    }
-
-    .book-card, .book-image-container {
-        width: 14rem;
-        height: 17rem;
-    }
-
-    .book-title-card {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .book-author-container {
-        display: none;
-    }
-
-    .read-status-text {
-        font-size: 1rem;
-        text-align: end;
-        text-transform: uppercase;
-    }
-}
-
-
 
 @media only screen and (min-width: 795px) {
-    #book-addcard-modal-content {
-        max-width: 700px;
-    }
+  #modal-content-container {
+    font-size: 1rem !important;
+  }
 
-    #modal-content-container {
-        font-size: 2rem!important;
-    }
+  #add-book-button {
+    font-size: 1.3rem;
+  }
+}
 
-    #add-book-button {
-        font-size: 2.5rem;
+@media only screen and (min-width: 819px) {
+  h1 {
+    font-size: 3rem;
+  }
 
-    }
+  #open-modal-button {
+    font-size: 1.5rem;
+  }
+}
+
+/* GITHUB BANNER */
+
+#github-banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#github-banner-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--primary-light-color);
+  border: 0;
+  fill: var(--primary-text-color);
+}
+
+.octo-arm {
+  transform-origin: 130px 106px;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
 }
