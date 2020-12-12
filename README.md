@@ -31,7 +31,7 @@
     </a>
 </p>
 
-<h1 align="center">:books: My Library :books:</h1>
+<h1 align="center">📚 My Library 📚</h1>
 
 <p align="center">
     Useful, elegant and adaptable Library Application.<br/><br/>
