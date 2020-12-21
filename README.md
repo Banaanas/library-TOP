@@ -151,8 +151,6 @@ Project Link: [https://github.com/Banaanas/library-TOP](https://github.com/Banaa
 ## Acknowledgements
 
 - [The Odin Project](https://www.theodinproject.com/)
-- [GitHub Pages](https://pages.github.com)
-- [Flaticon](https://www.flaticon.com/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
