@@ -8,9 +8,7 @@ const initLibrary = () => {
   addAllEventListeners();
 
   // Initiate with localStorage if there is one
-  const isLocalStoragePresent = localStorage.getItem(
-    "myLibraryArray",
-  );
+  const isLocalStoragePresent = localStorage.getItem("myLibraryArray");
 
   if (isLocalStoragePresent) {
     const localStorageLibraryArray = JSON.parse(isLocalStoragePresent);

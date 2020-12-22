@@ -10,10 +10,10 @@ import errorMessage from "./modal-error-message";
 const addBookToLibrary = () => {
   // addBookToLibrary only works if each field is filled
   if (
-    elementsDOM.allValues[0].value === ""
-    || elementsDOM.allValues[1].value === ""
-    || elementsDOM.allValues[2].value === ""
-    || elementsDOM.allValues[3].value === ""
+    elementsDOM.allValues[0].value === "" ||
+    elementsDOM.allValues[1].value === "" ||
+    elementsDOM.allValues[2].value === "" ||
+    elementsDOM.allValues[3].value === ""
   ) {
     errorMessage("Please, fill all the fields");
     return;

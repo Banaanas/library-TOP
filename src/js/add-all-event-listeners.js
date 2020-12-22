@@ -21,8 +21,8 @@ const addAllEventListeners = () => {
   // Add Delete function to all delete button / Event Delegation
   elementsDOM.bookShelf.addEventListener("click", (event) => {
     if (
-      event.target.className !== "delete-button"
-      && event.target.className !== "delete-image"
+      event.target.className !== "delete-button" &&
+      event.target.className !== "delete-image"
     ) {
       return;
     }
